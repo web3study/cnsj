@@ -2,7 +2,7 @@ import org.web3j.ens.NameHash;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.utils.Numeric;
-import org.yzb.cns.CnsResolver;
+import com.github.yzb.cns.CnsResolver;
 
 import java.io.IOException;
 
