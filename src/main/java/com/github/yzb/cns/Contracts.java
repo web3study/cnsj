@@ -15,8 +15,8 @@ package com.github.yzb.cns;
 /** CNS registry contract addresses. */
 public class Contracts {
 
-    public static final String SPACE_TEST = "0xD0eda7416C106C83E16f774aEeC225cD9f662F7F";
-    public static final String SPACE_MAIN = "0xD0eda7416C106C83E16f774aEeC225cD9f662F7F";
+    public static final String SPACE_TEST = "0xBf536C5042317B257BDf29e62CA80794238A9dFD";
+    public static final String SPACE_MAIN = "0xBf536C5042317B257BDf29e62CA80794238A9dFD";
 
     public static String resolveRegistryContract(String chainId) {
         final Long chainIdLong = Long.parseLong(chainId);
