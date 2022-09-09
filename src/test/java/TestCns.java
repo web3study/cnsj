@@ -11,11 +11,10 @@ public class TestCns {
     public static void main(String[] args) throws IOException {
         Web3j web3j = Web3j.build(new HttpService("https://evmtestnet.confluxrpc.com"));
         CnsResolver cns = new CnsResolver(web3j, 30000000 /* sync threshold, seconds */);
-        String address = cns.resolve("ferf.cfx");
+        String address = cns.resolve("0xares.cfx");
         System.out.println(address);
 
-        String nftId = NameHash.nameHash("ferf.cfx");
-        System.out.println(nftId);
-        System.out.println(Numeric.toBigIntNoPrefix(nftId.replace("0x", "")));
+        String node = cns.reverseResolve("0xf00079382099f609dbc37f5a7ea04f14d4ead67c");
+        System.out.println(node);
     }
 }

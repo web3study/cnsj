@@ -16,7 +16,7 @@ package com.github.yzb.cns;
 public class Contracts {
 
     public static final String SPACE_TEST = "0xBf536C5042317B257BDf29e62CA80794238A9dFD";
-    public static final String SPACE_MAIN = "0xBf536C5042317B257BDf29e62CA80794238A9dFD";
+    public static final String SPACE_MAIN = "0xec3133E740FcAc8AC7212078522E3Ee3FFde0903";
 
     public static String resolveRegistryContract(String chainId) {
         final Long chainIdLong = Long.parseLong(chainId);
