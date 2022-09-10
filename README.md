@@ -1,6 +1,15 @@
 # cnsj
 Cnsj  for developers
 
+```xml
+<dependency>
+  <groupId>io.github.web3study.cns</groupId>
+  <artifactId>cnsj</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <type>pom</type>
+</dependency>
+```
+
 DEMO get cns name：
 
 ```java
