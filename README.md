@@ -6,7 +6,6 @@ Cnsj  for developers
   <groupId>io.github.web3study.cns</groupId>
   <artifactId>cnsj</artifactId>
   <version>0.0.3</version>
-  <type>pom</type>
 </dependency>
 ```
 
