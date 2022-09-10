@@ -6,9 +6,9 @@
 
     <groupId>io.github.web3study.cns</groupId>
     <artifactId>cnsj</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>cnsj</name>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.3</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
