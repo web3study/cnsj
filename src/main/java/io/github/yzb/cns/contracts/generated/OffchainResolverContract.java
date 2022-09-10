@@ -1,4 +1,4 @@
-package com.github.yzb.cns.contracts.generated;
+package io.github.yzb.cns.contracts.generated;
 
 import io.reactivex.Flowable;
 import io.reactivex.functions.Function;

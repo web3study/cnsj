@@ -10,7 +10,7 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package com.github.yzb.cns;
+package io.github.yzb.cns;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -39,9 +39,9 @@ import org.web3j.tx.gas.DefaultGasProvider;
 import org.web3j.utils.EnsUtils;
 import org.web3j.utils.Numeric;
 import org.web3j.utils.Strings;
-import com.github.yzb.cns.contracts.generated.CNS;
-import com.github.yzb.cns.contracts.generated.OffchainResolverContract;
-import com.github.yzb.cns.contracts.generated.PublicResolver;
+import io.github.yzb.cns.contracts.generated.CNS;
+import io.github.yzb.cns.contracts.generated.OffchainResolverContract;
+import io.github.yzb.cns.contracts.generated.PublicResolver;
 
 import java.io.BufferedReader;
 import java.io.IOException;
