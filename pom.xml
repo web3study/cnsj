@@ -7,7 +7,7 @@
     <groupId>io.github.yzb.cns</groupId>
     <artifactId>cnsj</artifactId>
     <packaging>pom</packaging>
-    <name>cns-space-j</name>
+    <name>cnsj</name>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
@@ -161,12 +161,14 @@
 
     <distributionManagement>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>ossrh</id> <!-- 这里的id要与maven setting.xml中server的id一致 -->
+            <name>oss nexus repository hosting</name>
+            <url>https://s01.oss.sonatype.org/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>ossrh</id> <!-- 这里的id要与maven setting.xml中server的id一致 -->
+            <name>oss nexus repository hosting</name>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
