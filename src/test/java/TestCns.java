@@ -1,4 +1,4 @@
-import io.github.yzb.cns.CnsResolver;
+import io.github.web3study.cns.CnsResolver;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.http.HttpService;
 

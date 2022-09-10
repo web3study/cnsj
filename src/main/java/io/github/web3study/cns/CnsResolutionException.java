@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Web3 Labs Ltd.
+ * Copyright 2019 Web3 Labs Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -10,19 +10,21 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package io.github.yzb.cns;
+package io.github.web3study.cns;
 
-public class CnsException extends RuntimeException {
-
-    public CnsException(Throwable cause) {
-        super(cause);
-    }
-
-    public CnsException(String message) {
+/**
+ * CNS resolution exception.
+ */
+public class CnsResolutionException extends CnsException {
+    public CnsResolutionException(String message) {
         super(message);
     }
 
-    public CnsException(String message, Throwable cause) {
+    public CnsResolutionException(Throwable cause) {
+        super(cause);
+    }
+
+    public CnsResolutionException(String message, Throwable cause) {
         super(message, cause);
     }
 }

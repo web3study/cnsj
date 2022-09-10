@@ -1,4 +1,4 @@
-package io.github.yzb.cns.contracts.generated;
+package io.github.web3study.cns.contracts.generated;
 
 import io.reactivex.Flowable;
 import io.reactivex.functions.Function;
