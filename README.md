@@ -5,7 +5,7 @@ Cnsj  for developers
 <dependency>
   <groupId>io.github.web3study.cns</groupId>
   <artifactId>cnsj</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
 </dependency>
 ```
 
