@@ -26,9 +26,6 @@ public class TestCns {
         System.out.println("address1030:" + address1030);
         System.out.println("address1030cfx:" + address1030cfx);
 
-        String node1030 = cns1030.reverseResolve("0xd847ed72649A39aad263aC7a1Dcae6Eeb9d51E16");
-        System.out.println("cns1030:" + node1030);
-
 
     }
 }
