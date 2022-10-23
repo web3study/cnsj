@@ -14,6 +14,7 @@ package io.github.web3study.cns;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.web3study.cns.cfx.CfxAddress;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -46,6 +47,7 @@ import io.github.web3study.cns.contracts.generated.PublicResolver;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -140,6 +142,60 @@ public class CnsResolver {
             }
         } else {
             throw new CnsResolutionException("EnsName is invalid: " + ensName);
+        }
+    }
+
+    /**
+     * Returns the address of the resolver for the specified node.
+     *
+     * @param ensName The specified node.
+     * @return address of the resolver.
+     */
+    public String resolveCfx(String ensName) {
+        if (Strings.isBlank(ensName) || (ensName.trim().length() == 1 && ensName.contains("."))) {
+            return null;
+        }
+
+        try {
+            if (isValidEnsName(ensName, addressLength)) {
+                OffchainResolverContract resolver = obtainOffchainResolver(ensName);
+
+                boolean supportWildcard =
+                        resolver.supportsInterface(EnsUtils.ENSIP_10_INTERFACE_ID).send();
+                byte[] nameHash = NameHash.nameHashAsBytes(ensName);
+
+                String resolvedName;
+                if (supportWildcard) {
+                    String dnsEncoded = NameHash.dnsEncode(ensName);
+                    String addrFunction = resolver.addr(nameHash, new BigInteger("1029")).encodeFunctionCall();
+
+                    String lookupDataHex =
+                            resolver.resolve(
+                                    Numeric.hexStringToByteArray(dnsEncoded),
+                                    Numeric.hexStringToByteArray(addrFunction))
+                                    .send();
+
+                    resolvedName = resolveOffchain(lookupDataHex, resolver, LOOKUP_LIMIT);
+                } else {
+                    try {
+                        resolvedName = Numeric.toHexString(resolver.addr(nameHash, new BigInteger("1029")).send());
+                    } catch (Exception e) {
+                        throw new RuntimeException("Unable to execute Ethereum request: ", e);
+                    }
+                }
+
+                if (!WalletUtils.isValidAddress(resolvedName)) {
+                    throw new CnsResolutionException(
+                            "Unable to resolve address for name: " + ensName);
+                } else {
+                    return CfxAddress.getCfxAddress(resolvedName);
+                }
+
+            } else {
+                return ensName;
+            }
+        } catch (Exception e) {
+            throw new CnsResolutionException(e);
         }
     }
 

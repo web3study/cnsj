@@ -8,7 +8,7 @@
     <artifactId>cnsj</artifactId>
     <packaging>jar</packaging>
     <name>cnsj</name>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,6 +25,11 @@
     </licenses>
 
     <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>25.1-jre</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.web3j/core -->
         <dependency>
             <groupId>org.web3j</groupId>
